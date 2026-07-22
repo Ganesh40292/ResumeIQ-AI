@@ -42,6 +42,19 @@ frontend/src/
 
 ---
 
+## 📥 Repository Clone & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Ganesh40292/ResumeIQ-AI.git
+
+# Navigate to frontend directory and install dependencies
+cd ResumeIQ-AI/frontend
+npm install
+```
+
+---
+
 ## 🚦 Available Scripts
 
 ```bash

@@ -78,6 +78,15 @@ ResumeIQ AI/
 └── docker-compose.yml
 ```
 
+## 📥 Installation & Repository Clone
+
+Clone the repository to your local workspace:
+
+```bash
+git clone https://github.com/Ganesh40292/ResumeIQ-AI.git
+cd ResumeIQ-AI
+```
+
 ---
 
 ## 🚦 Local Development Setup
