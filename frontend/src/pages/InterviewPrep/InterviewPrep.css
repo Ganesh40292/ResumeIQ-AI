@@ -1,0 +1,110 @@
+/* AI Mock Interview Prep Stylesheet */
+
+.page-interviewprep {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .setup-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.setup-card {
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 1px solid #1e293b;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.setup-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.5rem;
+}
+
+/* Interview active screen */
+.question-workspace {
+  background-color: rgba(15, 23, 42, 0.5);
+  border: 1px solid #1e293b;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.timer-ring {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Results panel styles */
+.results-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Print Overrides */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header, nav, .page-header, .setup-card, .question-workspace, .global-toolbar, .print-hide, .toast-container {
+    display: none !important;
+  }
+
+  .page-interviewprep {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .results-workspace {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+  }
+
+  .chart-card,
+  .evaluation-question-card {
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+  }
+
+  .text-slate-400,
+  .text-slate-500,
+  .text-slate-350 {
+    color: #333333 !important;
+  }
+
+  .text-white {
+    color: #000000 !important;
+  }
+}

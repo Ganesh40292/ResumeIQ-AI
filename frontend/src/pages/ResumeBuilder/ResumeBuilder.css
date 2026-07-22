@@ -1,0 +1,237 @@
+/* AI Resume Builder & Editor Stylesheet */
+
+.page-resumebuilder {
+  animation: fadeIn 0.4s ease-out;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Three Column Workspace Grid Layout */
+.builder-workspace {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0; /* Important for inner scrollbars */
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .builder-workspace {
+    grid-template-columns: 240px 1fr 1fr;
+  }
+}
+
+/* Panel Scroll Containments */
+.left-nav-panel {
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 1px solid #1e293b;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.center-form-panel {
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 1px solid #1e293b;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+.right-preview-panel {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section buttons index */
+.section-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  background-color: #0f172a;
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.section-nav-btn:hover {
+  background-color: #1e293b;
+  color: var(--text-secondary);
+}
+
+.section-nav-btn.active {
+  background-color: rgba(99, 102, 241, 0.1);
+  border-color: #6366f1;
+  color: #a5b4fc;
+}
+
+/* Forms layout inside center editor */
+.form-section-header {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.5rem;
+}
+
+/* A4 Page Layout Previewer */
+.a4-sheet-preview {
+  width: 100%;
+  max-width: 800px;
+  min-height: 1000px;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 2.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+/* Template styles */
+.a4-sheet-preview.serif-font {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.a4-sheet-preview.mono-font {
+  font-family: monospace, Courier;
+}
+
+/* Modern Template Styles */
+.tpl-header-modern {
+  border-bottom: 2px solid var(--primary-theme, #6366f1);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tpl-section-title-modern {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--primary-theme, #6366f1);
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Minimal Template Styles */
+.tpl-header-minimal {
+  text-align: center;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.tpl-section-title-minimal {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  border-top: 1px double #cbd5e1;
+  border-bottom: 1px double #cbd5e1;
+  padding: 0.2rem 0;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* Creative Template Styles */
+.tpl-creative-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.tpl-creative-sidebar {
+  border-right: 1px solid #e2e8f0;
+  padding-right: 1rem;
+}
+
+/* Developer Template Styles */
+.tpl-header-developer {
+  font-family: monospace;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.tpl-section-title-developer {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  background-color: #f1f5f9;
+  padding: 0.25rem 0.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--primary-theme, #6366f1);
+}
+
+/* Print Overrides stylesheet */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header, nav, .page-header, .left-nav-panel, .center-form-panel, .global-toolbar, .print-hide, .toast-container {
+    display: none !important;
+  }
+
+  .page-resumebuilder {
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .builder-workspace {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .right-preview-panel {
+    background-color: #ffffff !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .a4-sheet-preview {
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    color: #000000 !important;
+  }
+}

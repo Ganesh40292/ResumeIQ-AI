@@ -1,0 +1,2 @@
+# Database Seed
+Placeholder file.

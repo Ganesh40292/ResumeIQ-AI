@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/resumeiq?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Ganesh
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        type:
+          preferred_uuid_jdbc_type: CHAR
+  docker:
+    compose:
+      enabled: false
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+app:
+  file:
+    upload-dir: uploads/resumes
+
+gemini:
+  api-key: ${GEMINI_API_KEY:your_gemini_api_key_here}
+  model: gemini-1.5-flash
+  endpoint-url: https://generativelanguage.googleapis.com/v1beta/models
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.resumeiq: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: INFO

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /builder/
+Disallow: /analysis/
+Disallow: /ats/
+Disallow: /interview-prep/
+Disallow: /settings/
+
+Sitemap: https://resumeiq.ai/sitemap.xml

@@ -1,0 +1,48 @@
+/* Tutorial Modal Glassmorphic Stylesheet */
+
+.tutorial-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  background-color: rgba(5, 8, 22, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.tutorial-modal-card {
+  background-color: rgba(15, 23, 42, 0.85);
+  border: 1px solid #1e293b;
+  border-radius: 1.75rem;
+  padding: 2.25rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.tutorial-modal-sparkles {
+  position: absolute;
+  top: -2.5rem;
+  right: -2.5rem;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animations transitions */
+.tutorial-modal-body h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .tutorial-modal-card {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+}

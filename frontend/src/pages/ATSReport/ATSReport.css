@@ -1,0 +1,227 @@
+/* ATS Scoring Report Stylesheet */
+
+.page-atsreport {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.ats-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .ats-grid-layout {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* Score Circle Gauge */
+.gauge-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 1px solid #1e293b;
+  border-radius: 1.5rem;
+}
+
+.gauge-circle {
+  transform: rotate(-90deg);
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: #0f172a;
+  stroke-width: 8;
+}
+
+.gauge-fill {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease-in-out, stroke 0.3s ease;
+}
+
+.gauge-text {
+  font-size: 1.75rem;
+  font-weight: 800;
+  fill: #f8fafc;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+.gauge-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  fill: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+/* Color Ranges Classes */
+.text-score-green { color: #10b981; }
+.text-score-yellow { color: #f59e0b; }
+.text-score-red { color: #ef4444; }
+
+.bg-score-green { background-color: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); }
+.bg-score-yellow { background-color: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.2); }
+.bg-score-red { background-color: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2); }
+
+/* Progress cards */
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .breakdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .breakdown-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.breakdown-card {
+  background-color: rgba(15, 23, 42, 0.3);
+  border: 1px solid #1e293b;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Charts Wrapper */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .charts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.chart-card {
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 1px solid #1e293b;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+/* Suggestion Card Row */
+.suggestion-item-row {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(15, 23, 42, 0.2);
+  border: 1px solid #1e293b;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.suggestion-item-row:hover {
+  border-color: #334155;
+}
+
+/* Printing styles */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .page-atsreport {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide selectors, header toolbars, sidebars */
+  .resume-sidebar,
+  .global-toolbar,
+  header,
+  nav,
+  .print-hide,
+  .toast-container,
+  .flex.items-center.gap-2.bg-slate-900.border {
+    display: none !important;
+  }
+
+  /* Expand layout to standard sheet full sizes */
+  .ats-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .gauge-container,
+  .breakdown-card,
+  .chart-card,
+  .suggestion-item-row,
+  .section-card {
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+  }
+
+  .gauge-text {
+    fill: #000000 !important;
+  }
+
+  .gauge-bg {
+    stroke: #eeeeee !important;
+  }
+
+  .text-slate-500,
+  .text-slate-400,
+  .text-slate-350,
+  .text-slate-300 {
+    color: #444444 !important;
+  }
+
+  .text-white,
+  .text-slate-100 {
+    color: #000000 !important;
+  }
+
+  /* Recharts custom fill styling */
+  .recharts-polar-grid-angle line,
+  .recharts-polar-grid-concentric path {
+    stroke: #dddddd !important;
+  }
+
+  .recharts-legend-item-text {
+    color: #000000 !important;
+  }
+}

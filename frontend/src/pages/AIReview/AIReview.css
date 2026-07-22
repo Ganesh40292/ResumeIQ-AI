@@ -1,0 +1,168 @@
+/* AI Career Assistant Stylesheet */
+
+.page-aireview {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.ai-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .ai-container {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* Tabs styles */
+.ai-tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 0.35rem;
+  border-radius: 1.25rem;
+}
+
+.ai-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.95rem;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-tab-btn:hover {
+  color: var(--text-secondary);
+}
+
+.ai-tab-btn.active {
+  background-color: #1e293b;
+  color: #6366f1;
+}
+
+/* AI Glow card */
+.ai-card-glow {
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 1px solid #1e293b;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.03);
+}
+
+/* Custom Markdown Rendering CSS wrapper */
+.markdown-wrapper {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.markdown-wrapper h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.markdown-wrapper h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.25rem;
+}
+
+.markdown-wrapper h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.markdown-wrapper p {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.markdown-wrapper ul, .markdown-wrapper ol {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  text-align: left;
+}
+
+.markdown-wrapper li {
+  margin-bottom: 0.35rem;
+  list-style-type: disc;
+}
+
+.markdown-wrapper blockquote {
+  border-left: 4px solid #6366f1;
+  background-color: rgba(99, 102, 241, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+  text-align: left;
+}
+
+.markdown-wrapper code {
+  font-family: monospace;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  color: #a7f3d0;
+  font-size: 0.75rem;
+}
+
+/* Typing loading keyframes */
+.typing-dots {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #6366f1;
+  border-radius: 50%;
+  animation: typingBounce 1s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}

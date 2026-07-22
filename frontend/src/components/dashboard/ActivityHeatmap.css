@@ -1,0 +1,53 @@
+/* Activity Heatmap Grid Stylesheet */
+
+.activity-heatmap-card {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.heatmap-cell {
+  outline: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+.heatmap-cell.level-0 {
+  background-color: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.heatmap-cell.level-1 {
+  background-color: #312e81; /* Deep Indigo */
+}
+
+.heatmap-cell.level-2 {
+  background-color: #4338ca; /* Medium Indigo */
+}
+
+.heatmap-cell.level-3 {
+  background-color: #4f46e5; /* Bright Indigo */
+}
+
+.heatmap-cell.level-4 {
+  background-color: #6366f1; /* Glowing Purple-Blue */
+  box-shadow: 0 0 4px rgba(99, 102, 241, 0.4);
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.18);
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.8) !important;
+  z-index: 10;
+}
+
+.heatmap-tooltip {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  backdrop-filter: blur(8px);
+  min-width: 90px;
+  transform: translateY(2px);
+  animation: tooltipFade 0.2s forwards;
+}
+
+@keyframes tooltipFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
